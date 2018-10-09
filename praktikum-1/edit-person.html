@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Erstelle neue Person</title>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+
+    <form class="edit-person" action="index.html">
+      <div class="edit-field"><span class="edit-name"> Name: </span><input required="required" class="edit-text" name="" type="text" value="Maier, Peter"/> </div>
+      <div class="edit-field"><span class="edit-name"> E-Mail: </span><input required="required" class="edit-text" name="" type="email" value="maier@online.de"/> </div>
+      <div class="edit-field"><span class="edit-name"> Postleitzahl: </span><input required="required" class="edit-text" name="" type="number" value="85051"/> </div>
+      <div class="edit-field"><span class="edit-name"> Ort: </span><input required="required" name="" class="edit-text" type="text" value="Ingolstadt"/> </div>
+      <div class="edit-field"><span class="edit-name"> Strasse und Hausnummer: </span><input required="required" class="edit-text" name="" type="text" value="Haunwöhrerstrasse 1234"/> </div>
+
+      <div class="save-cancel">
+	<input type="button" value="abbrechen" class="btn-save-cancel" onclick="window.location='index.html';"/>
+	<input type="reset" value="zurücksetzten" class="btn-save-cancel"/>
+	<input type="submit" value="speichern" class="btn-save-cancel"/>
+      </div>
+    </form>
+    
+  </body>
+</html>
