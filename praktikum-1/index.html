@@ -7,22 +7,26 @@
   </head>
   <body>
 
-    <section class="search">
+    <fieldset class="search">
+      <legend>Suche</legend>
       Name:
-      <input name="name" type="text" value="Name"/>
+      <input name="name" type="text"/>
       Ort:
-      <input name="Ort" type="text" value="Ort"/>
+      <input name="Ort" type="text"/>
       Sortierung:
       <select>
 	<option value="Ort">Ort</option>
 	<option value="PLZ">PLZ</option>
 	<option value="Name">Name</option>
       </select> 
-      <button>Suchen</button>
-    </section>
+      <button id="btnSearch">Suchen</button>
+    </fieldset>
 
-    <section class="table">
-      <a class="plain-button" href="new-person.html">+</a>
+    <fieldset class="table">
+      <legend>Personen</legend>
+      <a class="plain-button" href="new-person.html">
+	<img alt="" src="resources/plus.png"/>
+      </a>
 
       <table>
 	<tr>
@@ -70,7 +74,7 @@
 	  </td>
 	</tr>
       </table> 
-    </section>
+    </fieldset>
 
   </body>
 </html>

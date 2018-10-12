@@ -3,7 +3,11 @@ body {
     background: #FFFFE0;
 }
 
-section, form {
+#btnSearch {
+    margin-left: 10px;
+}
+
+fieldset, form {
     background: #DDDDDD;
 
     padding: 20px 2%;
@@ -97,4 +101,9 @@ a.plain-button {
     padding: 1px 8px 2px 8px;
     color: initial;
     cursor: default;
+}
+
+a.plain-button img {
+    width: 10px;
+    height: 10px;
 }
