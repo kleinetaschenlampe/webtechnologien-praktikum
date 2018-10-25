@@ -4,9 +4,6 @@
     <meta charset="UTF8">
     <title>Adressverwaltung</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script src="js/AdresseDTO.js"></script>
-    <script src="js/AdressenDAO.js"></script>
-    <script src="js/adressverwaltung.js"></script>
   </head>
   <body  onload="belegeAdressenTabelle();">
     <div class="blattZentriert">
@@ -14,14 +11,14 @@
 	<legend>Adressen suchen</legend>
 	<label>
 	  <span>Name</span>
-	  <input name="name" type="text" value="" size="30"/>
+	  <input id="nameID" name="name" type="text" value="" size="30"/>
 	</label>
 	<label>
 	  <span>Ort</span>
-	  <input name="ort" type="text" value="" size="30"/>
+	  <input id="ortID" name="ort" type="text" value="" size="30"/>
 	</label>
 	<label>
-	  <span>Sortierung</span>
+	  <span  id="sortierungID">Sortierung</span>
 	  <select  id="sortierungID">
 	    <option>Name</option>
 	    <option>PLZ</option>
@@ -53,4 +50,7 @@
       </form>
     </div>
   </body>
+  <script src="js/AdresseDTO.js"></script>
+  <script src="js/AdressenDAO.js"></script>
+  <script src="js/adressverwaltung.js"></script>
 </html>

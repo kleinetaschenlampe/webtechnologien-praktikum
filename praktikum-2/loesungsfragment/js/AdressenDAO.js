@@ -15,9 +15,8 @@ class AdressenDAO {
     }
 
     laden() {
-	var i;
-	var gespeichertesDAOalsString = localStorage.getItem('adressenDAO');
-	var gespeichertesDAO = JSON.parse(gespeichertesDAOalsString);
+	let i;
+	let gespeichertesDAO = JSON.parse(localStorage.getItem('adressenDAO'));
 	
 	if (gespeichertesDAO != null)
 	    this._adressenArray = gespeichertesDAO._adressenArray;
@@ -87,15 +86,15 @@ class AdressenDAO {
      */
     findeAdresseZuId(id) {
 	this.laden();
-	var p = this._adressenArray[id];
+	let p = this._adressenArray[id];
 	
 	return p;
     }
     
     findeAlle() {
 	this.laden();
-	var ergebnis = [];
-	var i, j = 0;
+	let ergebnis = [];
+	let i, j = 0;
 	
 	for (i = 0; i < this._adressenArray.length; ++i) {
 	    if (this._adressenArray[i].id != -1) {
@@ -114,8 +113,8 @@ class AdressenDAO {
 
     findeZuFilterUndSortiere(name, ort, sortierung) {
 	this.laden();
-	var ergebnis = [];
-	var i, j = 0;
+	let ergebnis = [];
+	let i, j = 0;
 	
 	for (i = 0; i < this._adressenArray.length; ++i) {
 	    if (this._adressenArray[i].id != -1) {
@@ -131,7 +130,7 @@ class AdressenDAO {
 
     neueAdresse(adresse) {
 	this.laden();
-	var i;
+	let i;
 	
 	for (i = 0; i < this._adressenArray.length; ++i) {
 	    if (this._adressenArray[i].id == -1) {
@@ -157,23 +156,28 @@ class AdressenDAO {
      */
     loescheAdresse(id) {
 	// *** (4) ***
+	this.laden();
+	if (this.findeAdressezuId(id) != "undefined") {
+	    this._adressenArray[id].id = -1;
+	    this.speichern();
+	}
     }
 
     /*
      * Getter für adresseDAO ---------------------------------------------
      */
     static gibAdresseDAO() {
-	var dao = "undefined";
+	let dao = "undefined";
 	
 	if (typeof(Storage) !== "undefined") {
 	    dao = new AdressenDAO();		
 	    if (localStorage['adressenDAO']) {
 		try {
-		    var i;
+		    let i;
 		    
 		    dao.laden();
 		    for (i = 0; i < dao._adressenArray.length; ++i) {
-			var p = dao._adressenArray[i]; 
+			let p = dao._adressenArray[i]; 
 			console.log(p.toString());
 		    }
 

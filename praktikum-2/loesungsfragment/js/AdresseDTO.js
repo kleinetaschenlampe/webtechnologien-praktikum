@@ -57,22 +57,23 @@ class AdresseDTO  {
      */
     pruefe() {
 	if (typeof this._id != "number")
-	    throw "Incorrent type for input 'id'";
+	    if (this._id > 0)
+		throw "Incorrent input for 'id'";
 
 	if (typeof this._name != "string")
-	    throw "Incorrent type for input 'name'";
+	    throw "Incorrent input for 'name'";
 
 	if (!validateEmail(this._email))
-	    throw "Incorrent type for input 'email'";
+	    throw "Incorrent input for 'email'";
 
 	if (typeof this._ort != "string")
-	    throw "Incorrent type for input 'ort'";
+	    throw "Incorrent input for 'ort'";
 
 	if (typeof this._plz != "number")
-	    throw "Incorrent type for input 'plz'";
+	    throw "Incorrent input for 'plz'";
 
 	if (typeof this._strasse != "number")
-	    throw "Incorrent type for input 'strasse'";
+	    throw "Incorrent input for 'strasse'";
     }
 
     /**
