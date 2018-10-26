@@ -45,6 +45,7 @@ function loescheAdresse(buttonWidget) {
     var index = buttonWidget.parentNode.parentNode.rowIndex;
     var id = Number(buttonWidget.parentNode.parentNode.cells[0].innerHTML);
 
+    console.log("id: " + id)
     adressenDAO.loescheAdresse(id);
     document.getElementById('adressenTabelle').deleteRow(index);
 }
@@ -97,16 +98,16 @@ function belegeZeile(table, adresse) {
     td.appendChild(button);
     // delete button
 
-    button = document.createElement("button");
-    button.onclick = function () {
+    var buttondelete = document.createElement("button");
+    buttondelete.onclick = function () {
 	loescheAdresse(this);
     };
     var image = document.createElement('img');
     image.src = "images/trashIcon.jpg";
     image.width = "15";
     image.height = "15";
-    button.appendChild(image);
-    td.appendChild(button);
+    buttondelete.appendChild(image);
+    td.appendChild(buttondelete);
 
 }
 
@@ -119,6 +120,7 @@ function belegeAdressenTabelle() {
 	    document.getElementById('nameID').value,
 	    document.getElementById('ortID').value,
 	    document.getElementById('sortierungID').value);
+	console.log(document.getElementById('sortierungID').value);
 	var i;
 
 	while (table.rows.length > 1) {

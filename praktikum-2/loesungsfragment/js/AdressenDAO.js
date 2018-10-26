@@ -64,18 +64,17 @@ class AdressenDAO {
 	switch (sortierung) {
 	case("Name"):
 	    liste.sort(function(a, b) {
-		return a._name.localeCompare(b._name);
+		return b._name.localeCompare(a._name);
 	    });
 	    break;
 	case("Ort"):
 	    liste.sort(function (a, b) {
-		return a._ort.localeCompare(b._ort);
+		return b._ort.localeCompare(a._ort);
 	    });
 	    break;
 	case("PLZ"):
 	    liste.sort(function (a, b) {
-		// TODO mayb number
-		return a._plz.localeCompare(b._plz);
+		return a._plz - b._plz;
 	    });
 	    break;
 	}
@@ -157,10 +156,11 @@ class AdressenDAO {
     loescheAdresse(id) {
 	// *** (4) ***
 	this.laden();
-	if (this.findeAdressezuId(id) != "undefined") {
+	if (this.findeAdresseZuId(id) !== "undefined") {
 	    this._adressenArray[id].id = -1;
 	    this.speichern();
 	}
+	this.laden();
     }
 
     /*
