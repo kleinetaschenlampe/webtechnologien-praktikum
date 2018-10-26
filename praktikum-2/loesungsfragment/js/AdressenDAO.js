@@ -51,7 +51,8 @@ class AdressenDAO {
      */
     filter(adresse, name, ort) {
 	// *** (2) ***
-	return (adresse.ort.startsWith(ort) && adresse.name.startsWith(name)) ? true : false;
+	return (adresse.ort.toLowerCase().startsWith(ort.toLowerCase()) &&
+		adresse.name.toLowerCase().startsWith(name.toLowerCase())) ? true : false;
     };	
     
     /**
@@ -74,7 +75,8 @@ class AdressenDAO {
 	    break;
 	case("PLZ"):
 	    liste.sort(function (a, b) {
-		return a._plz - b._plz;
+		console.log(parseInt(b._plz) - parseInt(a._plz));
+		return parseInt(b._plz) - parseInt(a._plz);
 	    });
 	    break;
 	}

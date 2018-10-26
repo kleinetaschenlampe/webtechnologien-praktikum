@@ -5,7 +5,6 @@ var adressenDAO = AdressenDAO.gibAdresseDAO();
 window.onfocus = function (evt) {
     var table = document.getElementById("adressenTabelle");
     
-    console.log("table = " + table);
     if (table == null) { // passiert nur, wenn wir in anderem Tab sind...
 	return;
     }
@@ -120,7 +119,6 @@ function belegeAdressenTabelle() {
 	    document.getElementById('nameID').value,
 	    document.getElementById('ortID').value,
 	    document.getElementById('sortierungID').value);
-	console.log(document.getElementById('sortierungID').value);
 	var i;
 
 	while (table.rows.length > 1) {
