@@ -148,7 +148,7 @@ function speichereAdresse() {
 				 document.getElementById("ortID").value,
 				 document.getElementById("plzID").value,
 				 document.getElementById("strasseID").value);
-    
+    console.log(adresse);
     try {
 	adresse.pruefe();
 	if (id == -1) {

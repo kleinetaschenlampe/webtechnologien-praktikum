@@ -56,23 +56,23 @@ class AdresseDTO  {
      * meldung ausgegeben werden.
      */
     pruefe() {
-	if (typeof this._id != "number")
-	    if (this._id > 0)
+	if (typeof parseInt(this._id) != "number")
+	    if (parseInt(this._id) > 0)
 		throw "Incorrent input for 'id'";
 
 	if (typeof this._name != "string")
 	    throw "Incorrent input for 'name'";
 
-	if (!validateEmail(this._email))
+	if (!this.validateEmail(this._email))
 	    throw "Incorrent input for 'email'";
 
 	if (typeof this._ort != "string")
 	    throw "Incorrent input for 'ort'";
 
-	if (typeof this._plz != "number")
+	if (typeof parseInt(this._plz) != "number")
 	    throw "Incorrent input for 'plz'";
 
-	if (typeof this._strasse != "number")
+	if (typeof this._strasse != "string")
 	    throw "Incorrent input for 'strasse'";
     }
 
