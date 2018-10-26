@@ -4,7 +4,42 @@
 
 class AdressenDAO {
     constructor() {
-	this._adressenArray = [];
+	// this._adressenArray = [];
+	this._adressenArray = [
+	    {
+		"_id": -1,
+		"_name": "name",
+		"_email": "top@test.de",
+		"_ort": "hausen",
+		"_plz": "1",
+		"_strasse": "asd"
+	    },
+	    {
+		"_id": 1,
+		"_name": "AName",
+		"_email": "amail@test.de",
+		"_ort": "AHausen",
+		"_plz": "1",
+		"_strasse": "AStrasse"
+	    },
+	    {
+		"_id": "2",
+		"_name": "BName",
+		"_email": "BMail@test.de",
+		"_ort": "DHausen",
+		"_plz": "2",
+		"_strasse": "BStrasse"
+	    },
+	    {
+		"_id": 3,
+		"_name": "CName",
+		"_email": "CMail@test.de",
+		"_ort": "CHausen",
+		"_plz": "0",
+		"_strasse": "CStrasse"
+	    }
+	];
+
     }
 
     /* 
