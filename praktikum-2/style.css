@@ -188,3 +188,6 @@ table.adressenTable {
     color: #fff;
 }
 
+#btnAbbrechen {
+    text-decoration: none;
+}
