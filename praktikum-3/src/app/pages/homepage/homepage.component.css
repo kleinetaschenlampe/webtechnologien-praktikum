@@ -1,0 +1,33 @@
+.loginHeader {
+    background-color: lightgrey;
+}
+
+.loginFooter {
+    color: red;
+}
+
+.steckbriefBild {
+    height: 240px;
+    width: 210px;
+}
+
+.loginDlgButton {
+    width: 100px;
+}
+
+#steckbriefPicture {
+    float: left;
+}
+
+#steckbriefSpacer {
+    float: left;
+    width: 50px;
+}
+
+#steckbriefDaten {
+    float: left;
+}
+
+.button-group {
+    text-align: center;
+}

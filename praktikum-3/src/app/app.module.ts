@@ -1,0 +1,25 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { SpeicherService } from './services/SpeicherService.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomepageComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [SpeicherService],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }

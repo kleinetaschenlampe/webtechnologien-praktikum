@@ -1,0 +1,26 @@
+# ---------------------------------
+# angular
+# ---------------------------------
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/praktikum-3/dist
+/praktikum-3/tmp
+/praktikum-3/out-tsc
+
+# dependencies
+/praktikum-3/node_modules
+
+# misc
+/praktikum-3/.sass-cache
+/praktikum-3/connect.lock
+/praktikum-3/coverage
+/praktikum-3/npm-debug.log
+/praktikum-3/yarn-error.log
+/praktikum-3/testem.log
+/praktikum-3/typings
+
+# System Files
+/praktikum-3/.DS_Store
+/praktikum-3/Thumbs.db

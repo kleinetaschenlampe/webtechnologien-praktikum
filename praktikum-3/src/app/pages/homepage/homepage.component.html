@@ -1,0 +1,126 @@
+<div class="container">
+  <h2>Willkommen auf der Homepage von {{ me.name }}!</h2>
+  <div id="content">
+    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+      <li class="nav-item"><a class="nav-link active" href="#steckbrief" data-toggle="tab">Steckbrief</a></li>
+      <li class="nav-item"><a class="nav-link" href="#details" data-toggle="tab">mehr Details...</a></li>
+      <li class="nav-item"><a class="nav-link" href="#links" data-toggle="tab">meine Links</a></li>
+    </ul>
+    <div id="my-tab-content" class="tab-content">
+      <div class="tab-pane active" id="steckbrief">
+	<h3>Mein Steckbrief:</h3>
+	<div id="steckbriefPicture">
+	  <img id="picture" class="steckbriefBild" alt="Fehler beim Laden des Bildes. Bitte gib einen g&uuml;ltigen Pfad ein!"
+	       src="{{me.picturePath}}">
+	</div>
+	<div id="steckbriefSpacer">&nbsp;</div>
+	<div id="steckbriefDaten">
+	  <form class="form-horizontal" role="form">
+	    <div class="form-group row">
+	      <label class="control-label col-sm-4" for="name">Name:</label>
+	      <div class="col-sm-8">
+		<input type="text" class="form-control" name="name" [disabled]="steckBriefGesperrt" [(ngModel)]="me.name">
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <label class="control-label col-sm-4" for="birthdate">Geburtsdatum:</label>
+	      <div class="col-sm-8">
+		<input type="date" class="form-control" name="birthdate" [disabled]="steckBriefGesperrt" [(ngModel)]="me.birthdate">
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <label class="control-label col-sm-4" for="birthplace">Ort:</label>
+	      <div class="col-sm-8">
+		<input type="text" class="form-control" name="birthplace" [disabled]="steckBriefGesperrt" [(ngModel)]="me.bornIn">
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <label class="control-label col-sm-4" for="profession">Beruf:
+	      </label>
+	      <div class="col-sm-8">
+		<input type="text" class="form-control" name="profession" [disabled]="steckBriefGesperrt" [(ngModel)]="me.profession">
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <label class="control-label col-sm-4" for="picturePath">Bildpfad:
+	      </label>
+	      <div class="col-sm-8">
+		<input type="text" class="form-control" name="picturePath" [disabled]="steckBriefGesperrt" [(ngModel)]="me.picturePath">
+	      </div>
+	    </div>
+	    <div class="form-group row" *ngIf="!steckBriefGesperrt">
+	      <label class="control-label col-sm-4" for="picturePath">Benutzername:
+	      </label>
+	      <div class="col-sm-8">
+		<input type="text" class="form-control" name="benutzername" [disabled]="steckBriefGesperrt" [(ngModel)]="me.username">
+	      </div>
+	    </div>
+	    <div class="form-group row" *ngIf="!steckBriefGesperrt">
+	      <label class="control-label col-sm-4" for="picturePath">Passwort:
+	      </label>
+	      <div class="col-sm-8">
+		<input type="password" class="form-control" name="password" [disabled]="steckBriefGesperrt" [(ngModel)]="me.password">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label col-sm-4" for="changeButton">
+	      </label>
+	      <div class="col-sm-8">
+		<button type="button" name="changeButton" *ngIf="steckBriefGesperrt" class="form-control" data-toggle="modal"
+			data-target="#loginDialog">
+		  ändern
+		</button>
+		<button type="button" name="okButton" *ngIf="!steckBriefGesperrt" class="form-control" (click)="steckBriefAendern()">
+		  ok
+		</button>
+	      </div>
+	    </div>
+	  </form>
+	</div>
+      </div>
+      <div class="tab-pane" id="details">
+	<h3>Mehr &uuml;ber mich:</h3>
+	<p>...</p>
+      </div>
+      <div class="tab-pane" id="links">
+	<h3>Meine Linksammlung:</h3>
+	<p>...</p>
+      </div>
+    </div>
+  </div> <!-- content -->
+</div> <!-- container -->
+
+<!-- Login Dialog -->
+<div id="loginDialog" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header loginHeader">
+	<h4 class="modal-title">Bitte logge dich ein!</h4>
+      </div>
+      <div class="modal-body">
+	<form class="form-horizontal" role="form">
+	  <div class="form-group row">
+	    <label class="control-label col-sm-4" for="username">Benutzername:</label>
+	    <div class="col-sm-8">
+	      <input type="text" class="form-control" name="username" [(ngModel)]="username">
+	    </div>
+	  </div>
+	  <div class="form-group row">
+	    <label class="control-label col-sm-4" for="password">Passwort:</label>
+	    <div class="col-sm-8">
+	      <input type="password" class="form-control" name="password" [(ngModel)]="password">
+	    </div>
+	  </div>
+	  <div class="button-group">
+	    <button class="btn btn-primary loginDlgButton" (click)="login()">login</button>
+	    <span class="ml-2"></span>
+	    <button class="btn btn-default loginDlgButton" (click)="cancelLogin()">abbrechen</button>
+	  </div>
+	</form>
+      </div>
+      <div class="modal-footer loginFooter">
+	{{ fehlermeldung }}
+      </div>
+    </div>
+  </div>
+</div>
